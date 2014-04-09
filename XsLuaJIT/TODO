@@ -1,0 +1,31 @@
+XsLuaJIT:
+	Error Handling:
+		- Check if luabind errors can be enhanced with actual useful information. @core
+		- Enhance Lua errors @core
+		- Enhance Lua C errors @core
+	  - Enhance debug.traceback with inforamtion about locals and upvalues @debug
+
+	Enchancements:
+		- integrate and test and lastly profile asmlib @core @enhance
+		- add a memory dumper: dump(pointer/offset, length) [probably to debug] @enhance @core @lib @done (13-10-26 16:07)
+		- test what is the fastest way to concatinate two strings. (straigh "a".."b", string.format("%s%s", a, b), ...?)
+
+Libraries:
+	Buffer:
+		- Unit tests @lib @testing
+
+	Marshal:
+		- Unit tests @lib @testing
+		- Allow to pass FILE* as optional 2nd/3rd argument for encode/decode and use it to directly write to/read from that stream @lib
+		- Wrap up like #xs_save.script @lib
+
+	Game:
+		- Unit tests @lib @testing
+
+  Path:
+  	- New library which gracefully and corectly handles paths.
+    - functions include: path:new, path:append, path:assign, path:basename, path:clear, path:ext, path:tostring, path:filename, path:leaf, path:root_dir, path:root_name, path:root_path, path:replace_ext, path:dir, path:branch, path:empty, path:stem, path:remove_leaf, path:remove_filename, path:is_absolute, path:is_relative, path:is_link, path:is_file, path:is_dir, path:has_branch, path:has_parent_path, path:has_root_dir, path:has_root_name, path:is_complete
+
+
+XsLoader:
+	- Write a loader which takes care of capturing stdout and offers to use a debug LuaJIT version after a crash. @loader
